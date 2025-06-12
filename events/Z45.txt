@@ -54,7 +54,7 @@ country_event = {
     option = {
         name = "This is disasterous"
 
-        add_ideas = POL_weak_government
+        add_ideas = Z45_weak_government
 
         set_temp_variable = { chance = random }
         country_event = {
@@ -232,7 +232,7 @@ country_event = {
 
     option = {
         name = "Good"
-        add_ideas = POL_legitimate_government
+        add_ideas = Z45_legitimate_government
 
         country_event = { id = Z45.102 days = 30}
     }
@@ -257,6 +257,6 @@ country_event = {
 
     option = {
         name = "For the greater good?"
-        add_ideas = POL_strong_government
+        add_ideas = Z45_strong_government
         }
     }

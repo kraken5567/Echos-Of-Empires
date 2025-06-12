@@ -1,6 +1,66 @@
 ideas = {
 	country = {
 
+		USANavy_ImprovedSub = {
+			modifier = {
+				navy_submarine_defence_factor = 0.1
+				navy_submarine_attack_factor = 0.1
+				navy_submarine_detection_factor = 0.05
+			}
+		}
+
+		USANavy_Sub = {
+			modifier = {
+				naval_torpedo_hit_chance_factor = 0.2
+				naval_torpedo_cooldown_factor = -0.1
+				naval_torpedo_screen_penetration_factor = 0.1
+			}
+		}
+
+		USANavy_Attack = {
+			modifier = {
+				naval_strike_agility_factor = 0.1
+				naval_morale_factor = 0.05
+			}
+		}
+
+		USA_CapitalFleetBoost = {
+			modifier = {
+				navy_capital_ship_attack_factor = 0.03
+				navy_capital_ship_defence_factor = 0.1
+				naval_coordination = 0.1
+				naval_morale_factor = 0.05
+			}
+		}
+
+		USA_NavalDef = {
+			modifier = {
+				naval_defense_factor = 0.1
+				naval_morale_factor = 0.05
+			}
+		}
+
+		USA_NavalDone_DEF = {
+			modifier = {
+				naval_damage_factor = 0.1
+				naval_defense_factor = 0.1
+			}
+		}
+		USA_NavalDone_ATK = {
+			modifier = {
+				naval_damage_factor = 0.1
+				naval_strike_attack_factor = 0.1
+			}
+		}
+
+		USA_NavalPlanning = {
+			modifier = {
+				naval_coordination = 0.1
+				naval_detection = 0.05
+				naval_doctrine_cost_factor = -0.15
+			}
+		}
+
 		USA_Airforce = {
 			modifier = {
 				experience_gain_air_factor = 0.05

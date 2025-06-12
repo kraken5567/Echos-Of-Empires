@@ -1,0 +1,5 @@
+﻿l_english:
+  DD_HISTORICAL:0 "[THIS.GetAdjective] Early Destroyer"
+  CA_HISTORICAL:0 "[THIS.GetAdjective] Early Cruiser"
+  CL_HISTORICAL:0 "[THIS.GetAdjective] Early Light Cruiser"
+  

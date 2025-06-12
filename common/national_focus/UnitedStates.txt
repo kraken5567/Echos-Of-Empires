@@ -37,6 +37,16 @@ focus_tree = {
 		prerequisite = { focus = USA_improveMilitary }
 		completion_reward = {
 			add_ideas = USA_pentagon
+			USA = {
+				686 = {
+					add_building_construction = {
+						type = pentagon
+						level = 1
+						province = 3957
+						instant_build = yes
+					}
+				}
+			}
 		}
 	}
 	
@@ -311,7 +321,10 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_theNavy
 		}
-		completion_reward = { }
+		completion_reward = {
+			navy_experience = 15
+			add_ideas = USA_NavalPlanning
+		}
 	}
 
 	focus = {
@@ -324,7 +337,31 @@ focus_tree = {
 			focus = USA_improvedFleet
 			focus = USA_improvedSub
 		}
-		completion_reward = { }
+		completion_reward = {
+			if = {
+				limit = {
+					has_country_flag = USA_NAVY_DEF
+				}
+				add_ideas = USA_NavalDone_DEF
+			}
+			else if = {
+				limit = {
+					has_country_flag = USA_NAVY_ATK
+				}
+				add_ideas = USA_NavalDone_ATK
+			}
+			else if = {
+				limit = {
+					OR = {
+						NOT = { has_country_flag = USA_NAVY_ATK } 
+						NOT = { has_country_flag = USA_NAVY_DEF } 
+					} 
+				}
+				custom_effect_tooltip = "USA_generic_nothingError"
+				custom_effect_tooltip = "Complete one of the Branches!"
+			}
+		}
+		
 	}
 
 	focus = {
@@ -339,7 +376,10 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_navyTactics
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_ideas = USA_NavalDef
+			set_country_flag = USA_NAVY_DEF
+		}
 	}
 
 	focus = {
@@ -351,7 +391,38 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_navyDefense
 		}
-		completion_reward = { }
+		completion_reward = {
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				create_equipment_variant = {
+					type = ship_hull_heavy_2
+					name = "USS Roosevelt"
+					 modules = {
+
+						fixed_ship_engine_slot = heavy_ship_engine_2
+						fixed_ship_anti_air_slot = ship_anti_air_2
+						fixed_ship_battery_slot = ship_heavy_battery_2
+						fixed_ship_radar_slot = ship_radar_2
+						fixed_ship_fire_control_system_slot = ship_fire_control_system_3
+						fixed_ship_armor_slot = ship_armor_bb_2 # could cause issues, not sure what armor is needed here
+
+						front_1_custom_slot = ship_anti_air_3
+						front_2_custom_slot = ship_heavy_battery_3
+
+						mid_1_custom_slot = ship_secondaries_1
+						mid_2_custom_slot = ship_airplane_launcher_2
+						# mid 3 is open for player
+
+					 }
+				}
+			}
+			else = {
+				create_equipment_variant = {
+					type = destroyer_2
+					name = "USS Roosevelt"
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -363,7 +434,9 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_destroyerFleet
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_ideas = USA_CapitalFleetBoost
+		}
 	}
 
 	# Attack (NAVY)
@@ -379,7 +452,10 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_navyTactics
 		}
-		completion_reward = { }
+		completion_reward = { 
+			set_country_flag = USA_NAVY_ATK
+			add_ideas = USANavy_Attack
+		}
 	}
 
 	focus = {
@@ -391,7 +467,9 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_navyAttack
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_ideas = USANavy_Sub
+		}
 	}
 
 	focus = {
@@ -403,7 +481,9 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_subFleet
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_ideas = USANavy_ImprovedSub
+		}
 	}
 
 	#THE AIRFORCE

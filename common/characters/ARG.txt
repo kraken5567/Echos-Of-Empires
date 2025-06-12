@@ -3,7 +3,7 @@ characters = {
 		name = Cirilo_Gonzalez
 		portraits = {
 			civilian = {
-				large = GFX_portrait_south_america_generic_7
+				# Put something here if you want a civilian portrait
 			}
 		}
 		country_leader = {
