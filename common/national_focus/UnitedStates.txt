@@ -37,6 +37,7 @@ focus_tree = {
 		prerequisite = { focus = USA_improveMilitary }
 		completion_reward = {
 			add_ideas = USA_pentagon
+<<<<<<< HEAD
 			USA = {
 				686 = {
 					add_building_construction = {
@@ -47,6 +48,8 @@ focus_tree = {
 					}
 				}
 			}
+=======
+>>>>>>> e49e96a (upload)
 		}
 	}
 	

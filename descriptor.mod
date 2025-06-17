@@ -1,8 +1,7 @@
 version="0.0"
 tags={
-	"Alternative History"
 	"Gameplay"
-	"Historical"
+	"Alternative History"
 	"Ideologies"
 	"National Focuses"
 	"Map"
@@ -10,7 +9,6 @@ tags={
 name="Echos of Empires"
 picture="thumbnail.png"
 
-replace_path="common"
 replace_path="common/bookmarks"
 replace_path="common/bop"
 replace_path="common/buildings"
@@ -23,10 +21,10 @@ replace_path="common/ideas"
 replace_path="common/ideologies"
 replace_path="common/names"
 replace_path="common/national_focus"
+replace_path="common/scripted_effects"
 
 replace_path="events"
 
-replace_path="gfx"
 replace_path="gfx/flags"
 replace_path="gfx/leaders"
 
