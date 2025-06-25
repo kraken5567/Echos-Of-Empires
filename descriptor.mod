@@ -42,5 +42,5 @@ replace_path="map/terrain"
 
 replace_path="portaits"
 
-supported_version="1.16.*"
+supported_version="1.13.*"
 remote_file_id="3036754741"
