@@ -445,6 +445,10 @@ fascism_on_the_rise = {
 			check_has_focus_tree_to_switch_to_fascism = yes
 		}
 		
+		remove_trigger = {
+			has_government = fascism
+		}
+		
 		fire_only_once = yes
 		
 		cost = 75
@@ -477,6 +481,10 @@ fascism_on_the_rise = {
 			has_country_flag = open_up_political_discourse_fascism
 			NOT = { has_government = fascism }
 			check_has_focus_tree_to_switch_to_fascism = yes
+		}
+		
+		remove_trigger = {
+			has_government = fascism
 		}
 		
 		fire_only_once = yes
@@ -534,6 +542,10 @@ fascism_on_the_rise = {
 				has_country_flag = open_up_political_discourse_fascism
 			}
 			check_has_focus_tree_to_switch_to_fascism = yes
+		}
+		
+		remove_trigger = {
+			has_government = fascism
 		}
 		
 		fire_only_once = yes
@@ -1000,6 +1012,10 @@ democratic_on_the_rise = {
 			check_has_focus_tree_to_switch_to_democratic = yes
 		}
 		
+		remove_trigger = {
+			has_government = democratic
+		}
+		
 		fire_only_once = yes
 		
 		cost = 75
@@ -1032,6 +1048,10 @@ democratic_on_the_rise = {
 			has_country_flag = open_up_political_discourse_democratic
 			NOT = { has_government = democratic }
 			check_has_focus_tree_to_switch_to_democratic = yes
+		}
+		
+		remove_trigger = {
+			has_government = democratic
 		}
 		
 		fire_only_once = yes
@@ -1089,6 +1109,10 @@ democratic_on_the_rise = {
 				has_country_flag = open_up_political_discourse_democratic
 			}
 			check_has_focus_tree_to_switch_to_democratic = yes
+		}
+		
+		remove_trigger = {
+			has_government = democratic
 		}
 		
 		fire_only_once = yes
@@ -1555,6 +1579,10 @@ communism_on_the_rise = {
 			check_has_focus_tree_to_switch_to_communism = yes
 		}
 		
+		remove_trigger = {
+			has_government = communism
+		}
+		
 		fire_only_once = yes
 		
 		cost = 75
@@ -1587,6 +1615,10 @@ communism_on_the_rise = {
 			has_country_flag = open_up_political_discourse_communist
 			NOT = { has_government = communism }
 			check_has_focus_tree_to_switch_to_communism = yes
+		}
+		
+		remove_trigger = {
+			has_government = communism
 		}
 		
 		fire_only_once = yes
@@ -1644,6 +1676,10 @@ communism_on_the_rise = {
 				has_country_flag = open_up_political_discourse_communist
 			}
 			check_has_focus_tree_to_switch_to_communism = yes
+		}
+		
+		remove_trigger = {
+			has_government = communism
 		}
 		
 		fire_only_once = yes

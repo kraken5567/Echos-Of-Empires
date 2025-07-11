@@ -13,11 +13,13 @@ political_actions = {
 			#Target is FROM
 			has_tech = atomic_research
 			NOT = { has_global_flag = first_nuke_dropped }
+			NOT = { has_idea = race_for_the_bomb }
 		}
 
 		target_root_trigger = {
             has_tech = atomic_research
             NOT = { has_global_flag = first_nuke_dropped }
+            NOT = { has_idea = race_for_the_bomb }
 		}
 
 		#If this trigger matches a country.
@@ -36,6 +38,7 @@ political_actions = {
             #Target is FROM
             has_tech = atomic_research
             NOT = { has_global_flag = first_nuke_dropped }
+            NOT = { has_idea = race_for_the_bomb }
             FROM = {
         		NOT = { is_in_faction_with = ROOT }
 				has_tech = nuclear_reactor
@@ -47,6 +50,7 @@ political_actions = {
 
 		complete_effect = {
 			set_country_flag = racing_for_the_bomb
+			add_ideas = race_for_the_bomb
 		}
 
 		ai_will_do = {
@@ -1579,6 +1583,10 @@ foreign_support = {
 
 		cost = 0
 
+		modifier = {
+
+		}
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1685,6 +1693,10 @@ foreign_support = {
 		fire_only_once = no
 
 		cost = 0
+
+		modifier = {
+
+		}
 
 		ai_will_do = {
 			factor = 1
@@ -1815,6 +1827,10 @@ foreign_support = {
 
 		cost = 0
 
+		modifier = {
+
+		}
+
 		ai_will_do = {
 			factor = 1
 			modifier = {
@@ -1921,6 +1937,10 @@ foreign_support = {
 		fire_only_once = no
 
 		cost = 0
+
+		modifier = {
+
+		}
 
 		ai_will_do = {
 			factor = 1
@@ -2049,6 +2069,10 @@ foreign_support = {
 
  		cost = 0
 
+ 		modifier = {
+
+ 		}
+
  		ai_will_do = {
  			factor = 1
 			modifier = {
@@ -2155,6 +2179,10 @@ foreign_support = {
  		fire_only_once = no
 
  		cost = 0
+
+ 		modifier = {
+
+ 		}
 
  		ai_will_do = {
  			factor = 1
@@ -2284,6 +2312,10 @@ foreign_support = {
 		fire_only_once = no
 
 		cost = 0
+
+		modifier = {
+
+		}
 
 		ai_will_do = {
 			factor = 1

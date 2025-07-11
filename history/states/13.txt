@@ -6,13 +6,13 @@ state = {
 	state_category = rural
 
 	history = {
-		owner = PER
+		owner = Z60
 		buildings = {
-			infrastructure = 1
+			infrastructure = 2
 			industrial_complex = 0
 			arms_factory = 0
 		}
-		add_core_of = PER
+		add_core_of = Z60
 	}
 
 	provinces = {

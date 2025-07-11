@@ -13,6 +13,1028 @@ focus_tree = {
 		y = 1700
 	}
 
+	# Military Tree
+
+	focus = {
+		id = USA_improveMilitary
+		icon = GFX_focus_generic_military_academy
+		cost = 7
+		x = 18
+		y = 8
+		completion_reward = {
+			army_experience = 15
+			navy_experience = 15
+			air_experience = 10
+		}
+	}
+
+	focus = {
+		id = USA_pentagon
+		icon = GFX_focus_usa_build_the_pentagon
+		cost = 12
+		x = 18
+		y = 10
+		prerequisite = { focus = USA_improveMilitary }
+		completion_reward = {
+			add_ideas = USA_pentagon
+			USA = {
+				capital_scope = {
+					add_building_construction = {
+						type = pentagon
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+	
+	# THE ARMY
+	focus = {
+		id = USA_theArmy
+		icon = GFX_goal_generic_axis_build_infantry
+		cost = 7
+		x = 15
+		y = 9
+		prerequisite = {
+			focus = USA_improveMilitary
+		}
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+
+	# tactics
+
+	focus = {
+		id = USA_armyTactics
+		icon = GFX_goal_generic_position_armies
+		cost = 7
+		x = 13
+		y = 10
+		prerequisite = {
+			focus = USA_theArmy
+		}
+		completion_reward = {
+			add_command_power = 25
+			army_experience = 5
+		}
+	}
+
+	focus = {
+		id = USA_armyTacticDone
+		icon = GFX_goal_generic_army_doctrines
+		cost = 7
+		x = 13
+		y = 14
+		prerequisite = { focus = USA_armorCombined }
+		prerequisite = { focus = USA_artilleryCombined }
+		completion_reward = {
+			if = {
+				limit = {
+					USA = { has_country_flag = USA_Tank }
+				}
+				USA = {
+
+					# Give Tank
+
+					if = {
+						limit = { has_dlc = "No Step Back" }
+							create_equipment_variant = {
+								name = "M6A1"
+								type = heavy_tank_chassis_2
+								upgrades = {
+									tank_gun_upgrade = 2
+									tank_nsb_engine_upgrade = 2
+									tank_nsb_armor_upgrade = 7
+									}
+								}
+							create_equipment_variant = {
+								name = "M4 Sherman"
+								type = medium_tank_chassis_2
+								upgrades = {
+									tank_gun_upgrade = 2
+									tank_nsb_armor_upgrade = 4
+									tank_nsb_engine_upgrade = 3
+								}
+							}
+							create_equipment_variant = {
+								name = "M5"
+								type = light_tank_chassis_3
+								upgrades = {
+									tank_gun_upgrade = 2
+									tank_nsb_armor_upgrade = 4
+									tank_nsb_engine_upgrade = 3
+								}
+							}
+						}
+					else = {
+						create_equipment_variant = {
+							name = "M6A1"
+							type = heavy_tank_chassis_2
+							upgrades = {
+								tank_gun_upgrade = 2
+								tank_engine_upgrade = 2
+								tank_armor_upgrade = 7
+								}
+							}
+						create_equipment_variant = {
+							name = "M4 Sherman"
+							type = medium_tank_chassis_2
+							upgrades = {
+								tank_gun_upgrade = 2
+								tank_armor_upgrade = 4
+								tank_engine_upgrade = 3
+							}
+						}
+						create_equipment_variant = {
+							name = "M5"
+							type = light_tank_chassis_3
+							upgrades = {
+								tank_gun_upgrade = 2
+								tank_armor_upgrade = 4
+								tank_engine_upgrade = 3
+							}
+						}
+					}
+						add_equipment_to_stockpile = {
+							variant_name = "M6A1"
+							type = heavy_tank_chassis_2
+							amount = 20
+						}
+						add_equipment_to_stockpile = {
+							variant_name = "M4 Sherman"
+							type = medium_tank_chassis_2
+							amount = 200
+						}
+						add_equipment_to_stockpile = {
+							variant_name = "M5"
+							type = light_tank_chassis_3
+							amount = 20
+						}
+					}
+				}
+			else_if = {
+				limit = { 
+					USA = { has_country_flag = USA_Artillery }
+				}
+				# Give Modern Cannons
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 500
+				}
+			}
+			else = {
+				custom_effect_tooltip = "USA_generic_nothingError"
+				custom_effect_tooltip = "Complete one of the Branches!"
+			}
+		}
+	}
+
+	# Armor
+	focus = {
+		id = USA_armored
+		icon = GFX_focus_generic_combined_arms
+		cost = 7
+		x = 12
+		y = 11
+		mutually_exclusive = {
+			focus = USA_artillery
+		}
+		prerequisite = {
+			focus = USA_armyTactics
+		}
+		completion_reward = {
+			add_ideas = USA_Armor
+		}
+	}
+
+	focus = {
+		id = USA_tanks
+		icon = GFX_goal_generic_army_tanks
+		cost = 7
+		x = 12
+		y = 12
+		prerequisite = {
+			focus = USA_armored
+		}
+		completion_reward = {
+			add_ideas = USA_armorBuff
+		}
+	}
+
+	focus = {
+		id = USA_armorCombined
+		icon = GFX_focus_generic_tank_air_support
+		cost = 7
+		x = 12
+		y = 13
+		prerequisite = { 
+			focus = USA_tanks
+		}
+		completion_reward = {
+			add_ideas = USA_TankAir
+			set_country_flag = USA_Tank
+		}
+	}
+
+	# Artillery
+	focus = {
+		id = USA_artillery
+		icon = GFX_goal_generic_occupy_start_war
+		cost = 7
+		x = 14
+		y = 11
+		mutually_exclusive = {
+			focus = USA_armored
+		}
+		prerequisite = {
+			focus = USA_armyTactics
+		}
+		completion_reward = {
+			add_ideas = USA_Artillery
+		}
+	}
+
+	focus = {
+		id = USA_barrage
+		icon = GFX_goal_generic_army_artillery2
+		cost = 7
+		x = 14
+		y = 12
+		prerequisite = {
+			focus = USA_artillery
+		}
+		completion_reward = {
+			add_ideas = USA_ConcentratedFire
+		}
+	}
+
+	focus = {
+		id = USA_artilleryCombined
+		icon = GFX_focus_generic_multi_role_aircraft
+		cost = 7
+		x = 14
+		y = 13
+		prerequisite = { 
+			focus = USA_barrage
+		}
+		completion_reward = {
+			add_ideas = USA_ArtilleryCombined
+			set_country_flag = USA_Artillery
+		}
+	}
+
+	#THE NAVY
+	focus = {
+		id = USA_theNavy
+		icon = GFX_goal_generic_build_navy
+		cost = 7
+		x = 21
+		y = 9
+		prerequisite = {
+			focus = USA_improveMilitary
+		}
+		completion_reward = {
+			navy_experience = 25
+		}
+	}
+
+	focus = {
+		id = USA_carrierFleet
+		icon = GFX_goal_generic_navy_carrier
+		cost = 7
+		x = 20
+		y = 11
+		prerequisite = { focus = USA_theNavy }
+		prerequisite = { focus = USA_pentagon }
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_navyTactics
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 7
+		x = 23
+		y = 10
+		prerequisite = {
+			focus = USA_theNavy
+		}
+		completion_reward = {
+			navy_experience = 15
+			add_ideas = USA_NavalPlanning
+		}
+	}
+
+	focus = {
+		id = USA_navyTacticDone
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 7
+		x = 23
+		y = 14
+		prerequisite = {
+			focus = USA_improvedFleet
+			focus = USA_improvedSub
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					has_country_flag = USA_NAVY_DEF
+				}
+				add_ideas = USA_NavalDone_DEF
+			}
+			else if = {
+				limit = {
+					has_country_flag = USA_NAVY_ATK
+				}
+				add_ideas = USA_NavalDone_ATK
+			}
+			else if = {
+				limit = {
+					OR = {
+						NOT = { has_country_flag = USA_NAVY_ATK } 
+						NOT = { has_country_flag = USA_NAVY_DEF } 
+					} 
+				}
+				custom_effect_tooltip = "USA_generic_nothingError"
+				custom_effect_tooltip = "Complete one of the Branches!"
+			}
+		}
+		
+	}
+
+	focus = {
+		id = USA_navyDefense
+		icon = GFX_goal_generic_navy_cruiser
+		cost = 7
+		x = 22
+		y = 11
+		mutually_exclusive = {
+			focus = USA_navyAttack
+		}
+		prerequisite = {
+			focus = USA_navyTactics
+		}
+		completion_reward = {
+			add_ideas = USA_NavalDef
+			set_country_flag = USA_NAVY_DEF
+		}
+	}
+
+	focus = {
+		id = USA_destroyerFleet
+		icon = GFX_focus_generic_navy_battleship2
+		cost = 7
+		x = 22
+		y = 12
+		prerequisite = {
+			focus = USA_navyDefense
+		}
+		completion_reward = {
+			if = {
+				limit = { has_dlc = "Man the Guns" }
+				create_equipment_variant = {
+					type = ship_hull_heavy_2
+					name = "USS Roosevelt"
+					 modules = {
+
+						fixed_ship_engine_slot = heavy_ship_engine_2
+						fixed_ship_anti_air_slot = ship_anti_air_2
+						fixed_ship_battery_slot = ship_heavy_battery_2
+						fixed_ship_radar_slot = ship_radar_2
+						fixed_ship_fire_control_system_slot = ship_fire_control_system_3
+						fixed_ship_armor_slot = ship_armor_bb_2 # could cause issues, not sure what armor is needed here
+
+						front_1_custom_slot = ship_anti_air_3
+						front_2_custom_slot = ship_heavy_battery_3
+
+						mid_1_custom_slot = ship_secondaries_1
+						mid_2_custom_slot = ship_airplane_launcher_2
+						# mid 3 is open for player
+
+					 }
+				}
+			}
+			else = {
+				create_equipment_variant = {
+					type = destroyer_2
+					name = "USS Roosevelt"
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = USA_improvedFleet
+		icon = GFX_goal_generic_navy_battleship
+		cost = 7
+		x = 22
+		y = 13
+		prerequisite = {
+			focus = USA_destroyerFleet
+		}
+		completion_reward = {
+			add_ideas = USA_CapitalFleetBoost
+		}
+	}
+
+	# Attack (NAVY)
+	focus = {
+		id = USA_navyAttack
+		icon = GFX_goal_generic_amphibious_assault
+		cost = 7
+		x = 24
+		y = 11
+		mutually_exclusive = {
+			focus = USA_navyDefense
+		}
+		prerequisite = {
+			focus = USA_navyTactics
+		}
+		completion_reward = { 
+			set_country_flag = USA_NAVY_ATK
+			add_ideas = USANavy_Attack
+		}
+	}
+
+	focus = {
+		id = USA_subFleet
+		icon = GFX_goal_generic_navy_submarine
+		cost = 7
+		x = 24
+		y = 12
+		prerequisite = {
+			focus = USA_navyAttack
+		}
+		completion_reward = {
+			add_ideas = USANavy_Sub
+		}
+	}
+
+	focus = {
+		id = USA_improvedSub
+		icon = GFX_goal_generic_navy_anti_submarine
+		cost = 7
+		x = 24
+		y = 13
+		prerequisite = {
+			focus = USA_subFleet
+		}
+		completion_reward = {
+			add_ideas = USANavy_ImprovedSub
+		}
+	}
+
+	#THE AIRFORCE
+	focus = {
+		id = USA_theAirforce
+		icon = GFX_goal_generic_build_airforce
+		cost = 7
+		x = 16
+		y = 11
+		prerequisite = { focus = USA_theArmy }
+		prerequisite = { focus = USA_pentagon }
+		completion_reward = {
+			add_ideas = USA_Airforce
+		}
+	}
+
+	focus = {
+		id = USA_fighters
+		icon = GFX_goal_generic_air_fighter2
+		cost = 7
+		x = 16
+		y = 12
+		prerequisite = { focus = USA_theAirforce }
+		completion_reward = {
+			if = {
+				limit = {
+					can_research = fighter3
+				}
+				set_technology = {
+					fighter1 = 1
+					fighter2 = 1
+					fighter3 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					can_research = fighter2
+				}
+				set_technology = {
+					fighter1 = 1
+					fighter2 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					can_research = fighter1
+				}
+				set_technology = {
+					fighter1 = 1
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = USA_bombers
+		icon = GFX_focus_generic_long_range_aircraft
+		cost = 7
+		x = 17
+		y = 13
+		prerequisite = { focus = USA_theAirforce }
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_CAS
+		icon = GFX_goal_generic_air_bomber
+		cost = 7
+		x = 18
+		y = 14
+		prerequisite = { 
+			focus = USA_theAirforce 
+			focus = USA_carrierFleet
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_torpedoSquad
+		icon = GFX_focus_generic_multi_role_aircraft
+		cost = 7
+		x = 19
+		y = 13
+		prerequisite = {
+			focus = USA_carrierFleet
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_interceptor
+		icon = GFX_focus_generic_cas_aircraft
+		cost = 7
+		x = 20
+		y = 12
+		prerequisite = {
+			focus = USA_carrierFleet
+		}
+		completion_reward = { }
+	}
+
+	# Industry Tree
+
+	focus = {
+		id = USA_addressEconomy
+		icon = GFX_focus_generic_industry_3
+		cost = 7
+		x = 38
+		y = 0
+		completion_reward = {
+			add_political_power = 25
+		}
+	}
+
+	focus = {
+		id = USA_industryEND
+		icon = GFX_focus_generic_industry_3
+		cost = 7
+		x = 38
+		y = 6
+		prerequisite = {
+			focus = USA_regulations
+			focus = USA_fundPublic
+			focus = USA_infrastructurePrivate
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					# free market = USA_invisableHandDid
+					ROOT = { has_country_flag = USA_invisableHandDid }
+				}
+				# Should loop to give a bonus random building to a state every 4 months
+				country_event = { id = USA_industry.1 days = 5 }
+			}
+			if = {
+				limit = {
+					# intervention = USA_interveneDid
+					ROOT = { has_country_flag = USA_interveneDid }
+				}
+				country_event = { id = USA_industry.0 days = 5 }
+			}
+		}
+	}
+
+	# More spirit buffs, no random building event
+	
+	focus = {
+		id = USA_invisibleHand
+		icon = GFX_focus_generic_concessions
+		cost = 7
+		x = 42
+		y = 1
+		prerequisite = {
+			focus = USA_addressEconomy
+		}
+		mutually_exclusive = {
+			focus = USA_intervene
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_freeMarketReforms
+		icon = GFX_goal_continuous_boost_freedom
+		cost = 7
+		x = 41
+		y = 2
+		prerequisite = {
+			focus = USA_invisibleHand
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_reduceTax
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		cost = 7
+		x = 43
+		y = 2
+		prerequisite = {
+			focus = USA_invisibleHand
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_migrantMagnet
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		cost = 7
+		x = 40
+		y = 3
+		prerequisite = {
+			focus = USA_freeMarketReforms
+		}
+		prerequisite = {
+			focus = USA_reduceTax
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_skilledLabor
+		icon = GFX_focus_generic_military_academy
+		cost = 7
+		x = 42
+		y = 3
+		prerequisite = {
+			focus = USA_freeMarketReforms
+		}
+		prerequisite = {
+			focus = USA_reduceTax
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_freeTrade
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 7
+		x = 44
+		y = 3
+		prerequisite = {
+			focus = USA_freeMarketReforms
+		}
+		prerequisite = {
+			focus = USA_reduceTax
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_researchPush
+		icon = GFX_focus_research2
+		cost = 7
+		x = 41
+		y = 4
+		prerequisite = {
+			focus = USA_freeMarketReforms
+		}
+		prerequisite = {
+			focus = USA_reduceTax
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_consumerPush
+		icon = GFX_goal_generic_consumer_goods
+		cost = 7
+		x = 43
+		y = 4
+		prerequisite = {
+			focus = USA_freeMarketReforms
+		}
+		prerequisite = {
+			focus = USA_reduceTax
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_infrastructurePrivate
+		icon = GFX_goal_generic_construct_civilian
+		cost = 7
+		x = 42
+		y = 5
+		prerequisite = {
+			focus = USA_consumerPush
+		}
+		prerequisite = {
+			focus = USA_researchPush
+		}
+		completion_reward = {
+			set_country_flag = USA_invisableHandDid
+		}
+	}
+
+	# Less building buffs, event that builds a building randomly(?)
+
+	focus = {
+		id = USA_intervene
+		icon = GFX_focus_generic_the_giant_wakes
+		cost = 7
+		x = 34
+		y = 1
+		prerequisite = {
+			focus = USA_addressEconomy
+		}
+		mutually_exclusive = {
+			focus = USA_invisibleHand
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_ratifyProjects
+		icon = GFX_focus_generic_treaty
+		cost = 7
+		x = 33
+		y = 2
+		prerequisite = {
+			focus = USA_intervene
+		}
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.1
+			add_timed_idea = {
+				idea = USA_projects
+				days = 730
+			}
+		}
+	}
+
+	focus = {
+		id = USA_getSupport
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 7
+		x = 35
+		y = 2
+		prerequisite = {
+			focus = USA_intervene
+		}
+		completion_reward = { 
+			add_political_power = -75
+			add_stability = -0.05
+			add_ideas = USA_publicColab
+		}
+	}
+
+	# USA_---Works
+
+	focus = {
+		id = USA_steelWorks
+		icon = GFX_focus_generic_steel
+		cost = 7
+		x = 31
+		y = 3
+		prerequisite = {
+			focus = USA_ratifyProjects
+		}
+		prerequisite = {
+			focus = USA_getSupport
+		}
+		completion_reward = {
+			ROOT = {
+				random_core_state = {
+					add_resource = {
+						type = steel
+						amount = 20
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = USA_tungstenWorks
+		icon = GFX_focus_generic_tungsten
+		cost = 7
+		x = 33
+		y = 3
+		prerequisite = {
+			focus = USA_ratifyProjects
+		}
+		prerequisite = {
+			focus = USA_getSupport
+		}
+		completion_reward = {
+			ROOT = {
+				random_core_state = {
+					add_resource = {
+						type = tungsten
+						amount = 20
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = USA_aluminiumWorks
+		icon = GFX_focus_generic_aluminum
+		cost = 7
+		x = 35
+		y = 3
+		prerequisite = {
+			focus = USA_ratifyProjects
+		}
+		prerequisite = {
+			focus = USA_getSupport
+		}
+		completion_reward = {
+			ROOT = {
+				random_core_state = {
+					add_resource = {
+						type = aluminium
+						amount = 20
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = USA_oilWorks
+		icon = GFX_goal_generic_oil_refinery
+		cost = 7
+		x = 37
+		y = 3
+		prerequisite = {
+			focus = USA_ratifyProjects
+		}
+		prerequisite = {
+			focus = USA_getSupport
+		}
+		completion_reward = {
+			ROOT = {
+				random_core_state = {
+					add_resource = {
+						type = oil
+						amount = 10
+					}
+				}
+			}
+		}
+	}
+
+	# past resourse works focuses
+
+	focus = {
+		id = USA_factoryWorks
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 7
+		x = 32
+		y = 4
+		prerequisite = {
+			focus = USA_ratifyProjects
+		}
+		prerequisite = {
+			focus = USA_getSupport
+		}
+		completion_reward = {
+			# Very op, probably...
+			every_core_state = {
+				limit = {
+					check_variable = {
+						var = building_level@industrial_complex
+						value = 2
+						compare = less_than
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = USA_infrastructureWorks
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 7
+		x = 34
+		y = 4
+		prerequisite = {
+			focus = USA_ratifyProjects
+		}
+		prerequisite = {
+			focus = USA_getSupport
+		}
+		completion_reward = {
+			every_core_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = USA_productionWorks
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 7
+		x = 36
+		y = 4
+		prerequisite = {
+			focus = USA_ratifyProjects
+		}
+		prerequisite = {
+			focus = USA_getSupport
+		}
+		completion_reward = {
+			every_core_state = {
+				limit = {
+					check_variable = {
+						var = building_level@arms_factory
+						value = 2
+						compare = less_than
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+				}
+			}
+		}
+	}
+
+	# Intervene End Focuses
+
+	focus = {
+		id = USA_regulations
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 7
+		x = 33
+		y = 5
+		prerequisite = {
+			focus = USA_factoryWorks
+		}
+		prerequisite = {
+			focus = USA_productionWorks
+			focus = USA_infrastructureWorks
+		}
+		completion_reward = {
+			add_ideas = USA_regulated
+			set_country_flag = USA_interveneDid
+		}
+	}
+
+	focus = {
+		id = USA_fundPublic
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		cost = 7
+		x = 35
+		y = 5
+		prerequisite = {
+			focus = USA_factoryWorks
+			focus = USA_infrastructureWorks
+		}
+		prerequisite = {
+			focus = USA_productionWorks
+		}
+		completion_reward = {
+			add_political_power = -100
+			add_stability = 0.15
+			set_country_flag = USA_interveneDid
+		}
+	}
+
 	# Political Tree
 
 	focus = {
@@ -36,8 +1058,14 @@ focus_tree = {
 			focus = USA_RedArmy
 		}
 		completion_reward = {
-			add_political_power = 200
+			add_political_power = 100
 			remove_ideas = USA_Contested_Government
+			USA = {
+				remove_trait = {
+					trait = weak_democrat
+				}
+			}
+			# Custom Trait Logic HERE
 		}
 	}
 
@@ -76,7 +1104,9 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_socialDemocracy
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_ideas = USA_RedWave
+		}
 	}
 
 		# Full Communism
@@ -130,10 +1160,25 @@ focus_tree = {
 			cost = 7
 			x = 18
 			y = 3
+			cancel = {
+				check_variable = {
+					var = current_communism
+					value = 25
+					compare = less_than
+				}
+			}
 			prerequisite = {
 				focus = USA_Communism
 			}
-			completion_reward = { }
+			completion_reward = {
+				add_political_power = -100
+				add_popularity = {
+					ideology = communism
+					popularity = 0.05
+				}
+				add_ideas = USA_communist
+				custom_effect_tooltip = "FOCUS_WARN_END_PARTPOP"
+			}
 		}
 
 		# Moderate Communism
@@ -186,10 +1231,25 @@ focus_tree = {
 			cost = 7
 			x = 20
 			y = 3
+			cancel = {
+				check_variable = {
+					var = current_socialism
+					value = 25
+					compare = less_than
+				}
+			}
 			prerequisite = {
 				focus = USA_Socialism
 			}
-			completion_reward = { }
+			completion_reward = {
+				add_political_power = -100
+				add_popularity = {
+					ideology = socialism
+					popularity = 0.05
+				}
+				add_ideas = USA_socialDem
+				custom_effect_tooltip = "FOCUS_WARN_END_PARTPOP"
+			}
 		}
 
 	# Democratic (MEDIUM)
@@ -221,10 +1281,12 @@ focus_tree = {
 		cost = 5
 		x = 24
 		y = 2
+
 		prerequisite = {
 			focus = USA_gainSupport
 			focus = USA_pushForACentralCause
 		}
+
 		completion_reward = {
 			add_timed_idea = {
 				idea = USA_remove_communism
@@ -236,7 +1298,7 @@ focus_tree = {
 					ideology = communism
 					size = communism_support_var
 				}
-				custom_effect_tooltip = USA_civilWarFireWarn
+				custom_effect_tooltip = "USA_civilWarFireWarn"
 			}
 		}
 	}
@@ -247,10 +1309,12 @@ focus_tree = {
 		cost = 5
 		x = 22
 		y = 2
+
 		prerequisite = {
 			focus = USA_gainSupport
 			focus = USA_freePoliticalRivals
 		}
+
 		completion_reward = { 
 			add_timed_idea = {
 				idea = USA_remove_fascism
@@ -262,7 +1326,7 @@ focus_tree = {
 					ideology = fascism
 					size = fascism_support_var
 				}
-				custom_effect_tooltip = USA_civilWarFireWarn
+				custom_effect_tooltip = "USA_civilWarFireWarn"
 			}
 		}
 	}
@@ -279,7 +1343,16 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_antiFascistRaids
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_timed_idea = {
+				idea = USA_demIndustry
+				days = 365
+			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
+		}
 	}
 
 	focus = {
@@ -291,7 +1364,10 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_industryOfDemocracy
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_ideas = USA_demResearch
+			USA = { add_research_slot = 1 }
+		}
 	}
 
 	# Nationalist (EASY)
@@ -327,7 +1403,9 @@ focus_tree = {
 			focus = USA_ConfederateConstitution
 			focus = USA_AmericaFirstParty
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_ideas = USA_KKK
+		}
 	}
 		# Moderate Fascism
 		focus = {
@@ -379,10 +1457,24 @@ focus_tree = {
 			cost = 7
 			x = 26
 			y = 3
+			cancel = {
+				check_variable = {
+					var = current_nationalism
+					value = 25
+					compare = less_than
+				}
+			}
 			prerequisite = {
 				focus = USA_Nationalism
 			}
-			completion_reward = { }
+			completion_reward = {
+				custom_effect_tooltip = "FOCUS_WARN_END_PARTPOP"
+				add_timed_idea = {
+					idea = USA_confederacy
+					days = 70
+				}
+				country_event = USA_civil.000
+			}
 		}
 
 		# Full Fascism
@@ -435,10 +1527,24 @@ focus_tree = {
 			cost = 7
 			x = 28
 			y = 3
+			cancel = {
+				check_variable = {
+					var = current_fascism
+					value = 25
+					compare = less_than
+				}
+			}
 			prerequisite = {
 				focus = USA_Fascism
 			}
-			completion_reward = { }
+			completion_reward = {
+				add_timed_idea = {
+					idea = USA_dreamFirst
+					days = 365
+				}
+				custom_effect_tooltip = "FOCUS_WARN_END_PARTPOP"
+
+			}
 		}
 
 	#Conquering Tree
@@ -449,6 +1555,12 @@ focus_tree = {
 		cost = 12
 		x = 7
 		y = 0
+		available = {
+			USA = {
+				has_completed_focus = USA_FixedPolitics
+			}
+		}
+
 		completion_reward = { 
 			add_political_power = 100
 		}
@@ -492,9 +1604,11 @@ focus_tree = {
 				if = {
 					limit = {
 						NOT = {
-							is_ally_with = ROOT
-							is_puppet_of = ROOT
-							is_guaranteed_by = ROOT
+							OR = {
+								is_ally_with = ROOT
+								is_puppet_of = ROOT
+								is_guaranteed_by = ROOT
+							}
 						}
 					}
 				}
@@ -519,13 +1633,16 @@ focus_tree = {
 		y = 7
 		mutually_exclusive = {
 			focus = USA_WorldDomination
+			focus = USA_MakeAllies
 		}
 		prerequisite = {
 			focus = USA_AggressiveOverseas
 			focus = USA_PassiveOverseas
 		}
 		completion_reward = {
-			
+			add_political_power = 50
+			add_war_support = 0.05
+			add_stability = 0.05
 		}
 	}
 
@@ -554,6 +1671,9 @@ focus_tree = {
 		cost = 5
 		x = 11
 		y = 7
+		mutually_exclusive = {
+			focus = USA_WarWhenNeeded
+		}
 		prerequisite = {
 			focus = USA_PassiveOverseas
 		}
@@ -570,15 +1690,15 @@ focus_tree = {
 				}
 				if = {
 					limit = {
-						PREV = { is_ai = yes }
+						THIS = { is_ai = yes }
 					}
-					PREV = { country_event = {id = USA_interact_Ai.01.99 days = 3} }
+					THIS = { country_event = {id = USA_interact_Ai.0199 days = 3} }
 				}
 				else_if = {
 					limit = { 
-						PREV = { is_ai = no }
+						THIS = { is_ai = no }
 					}
-					PREV = { country_event = {id = USA_interact_Player.01.99 days = 3} }
+					THIS = { country_event = {id = USA_interact_Player.0199 days = 3} }
 				}
 			}
 		}
@@ -600,6 +1720,16 @@ focus_tree = {
 
 		prerequisite = {
 			focus = USA_a_new_beginning
+		}
+
+		available = {
+			USA = {
+				OR = {
+					has_government = nationalist
+					has_government = fascism
+					has_government = communism
+				}
+			}
 		}
 
 		completion_reward = { 
@@ -775,6 +1905,16 @@ focus_tree = {
 
 		prerequisite = {
 			focus = USA_a_new_beginning
+		}
+		
+		available = {
+			USA = {
+				OR = {
+					has_government = socialism
+					has_government = neutrality
+					has_government = democratic
+				}
+			}
 		}
 
 		completion_reward = { 
@@ -964,5 +2104,4 @@ focus_tree = {
 			USA = {create_faction = "North American Defense Pact"}
 		}
 	}
-
 }

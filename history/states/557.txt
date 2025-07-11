@@ -14,7 +14,7 @@ state = {
 	history = {
 		owner = SPR
 		buildings = {
-			infrastructure = 1
+			infrastructure = 2
 			industrial_complex = 0
 			arms_factory = 0
 		}

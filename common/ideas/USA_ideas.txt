@@ -1,6 +1,267 @@
 ideas = {
 	country = {
 
+		USANavy_ImprovedSub = {
+			modifier = {
+				navy_submarine_defence_factor = 0.1
+				navy_submarine_attack_factor = 0.1
+				navy_submarine_detection_factor = 0.05
+			}
+		}
+
+		USANavy_Sub = {
+			modifier = {
+				naval_torpedo_hit_chance_factor = 0.2
+				naval_torpedo_cooldown_factor = -0.1
+				naval_torpedo_screen_penetration_factor = 0.1
+			}
+		}
+
+		USANavy_Attack = {
+			modifier = {
+				naval_strike_agility_factor = 0.1
+				naval_morale_factor = 0.05
+			}
+		}
+
+		USA_CapitalFleetBoost = {
+			modifier = {
+				navy_capital_ship_attack_factor = 0.03
+				navy_capital_ship_defence_factor = 0.1
+				naval_coordination = 0.1
+				naval_morale_factor = 0.05
+			}
+		}
+
+		USA_NavalDef = {
+			modifier = {
+				naval_defense_factor = 0.1
+				naval_morale_factor = 0.05
+			}
+		}
+
+		USA_NavalDone_DEF = {
+			modifier = {
+				naval_damage_factor = 0.1
+				naval_defense_factor = 0.1
+			}
+		}
+		USA_NavalDone_ATK = {
+			modifier = {
+				naval_damage_factor = 0.1
+				naval_strike_attack_factor = 0.1
+			}
+		}
+
+		USA_NavalPlanning = {
+			modifier = {
+				naval_coordination = 0.1
+				naval_detection = 0.05
+				naval_doctrine_cost_factor = -0.15
+			}
+		}
+		
+		USA_Airforce = {
+			modifier = {
+				experience_gain_air_factor = 0.05
+				air_ace_generation_chance_factor = 0.01
+				air_mission_efficiency = 0.04
+			}
+		}
+
+		USA_ArtilleryCombined = {
+			picture = generic_mountain_warfare
+			modifier = {
+				army_artillery_attack_factor = 0.05
+				army_artillery_defence_factor = 0.025
+				army_artillery_speed_factor = 0.01
+			}
+		}
+
+		USA_ConcentratedFire = {
+			picture = army_ordnance_department
+			equipment_bonus = {
+				artillery = {
+					hard_attack = 0.05
+					soft_attack = 0.05
+				}
+			}
+		}
+
+		USA_Artillery = {
+			picture = generic_artillery_regiments
+			equipment_bonus = {
+				artillery = {
+					hard_attack = 0.03
+					soft_attack = 0.05
+					max_organisation = 0.05
+				}
+			}
+		}
+
+		USA_TankAir = {
+			picture = generic_license_production
+			modifier = {
+				air_cas_efficiency = 0.1
+			}
+			equipment_bonus = {
+				armor = {
+					# in %
+					recon = 0.03
+					ap_attack = 0.02
+					max_organisation = 0.05
+					
+					instant = yes
+				}
+			}
+		}
+
+		USA_armorBuff = {
+			picture = man_five_year_plan_tank
+			equipment_bonus = {
+				armor = {
+					build_cost_ic = -0.1
+					breakthrough = 0.05
+					attack = 0.05
+					defense = 0.075
+					
+					instant = yes
+				}
+			}
+		}
+
+		USA_Armor = {
+			picture = generic_armor
+			modifier = {
+				army_armor_attack_factor = 0.05
+				army_armor_defence_factor = 0.05
+				army_armor_speed_factor = 0.1
+			}
+		}
+
+		USA_pentagon = {
+			picture = USA_pentagon
+			modifier = {
+				max_command_power = 50
+				command_power_gain = 0.05
+			}
+		}
+
+		USA_fundPublic = {
+			picture = generic_foreign_capital
+			modifier = {
+				political_power_gain = -0.1
+				industrial_capacity_factory = 0.025
+				monthly_population = 0.01
+			}
+		}
+
+		USA_regulated = {
+			picture = generic_production_bonus
+			modifier = {
+				political_power_gain = -0.05
+				industrial_capacity_factory = -0.025
+				monthly_population = 0.025
+			}
+		}
+
+		USA_publicColab = {
+			picture = generic_goods_red_bonus
+			modifier = {
+				political_power_gain = -0.15
+				production_factory_start_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.5
+				production_factory_max_efficiency_factor = 0.1
+				industrial_capacity_factory = 0.05
+			}
+		}
+
+		USA_projects = {
+			picture = generic_exploit_mines
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_arms_factory_factor = 0.1
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_infrastructure_factor = 0.25
+			}
+		}
+
+		USA_communist = {
+			picture = socialist_science_focus
+			modifier = {
+				communism_drift = 0.025
+				communism_acceptance = 35
+			}
+		}
+
+		USA_socialDem = {
+			picture = socialist_science_focus
+			modifier = {
+				socialism_drift = 0.02
+				socialism_acceptance = 45
+			}
+		}
+
+		USA_confederacy = {
+			picture = generic_fascism_drift_2
+			modifier = {
+				nationalist_drift = 0.02
+				custom_modifier_tooltip = "USA_Confederacy_Contention"
+			}
+		}
+
+		USA_dreamFirst = {
+			picture = usa_desegregation_1
+			modifier = {
+				fascism_drift = 0.01
+				fascism_acceptance = 50
+				political_power_gain = 0.1
+			}
+		}
+
+		USA_KKK = {
+			picture = generic_usa_conflict
+			modifier = {
+				nationalist_drift = 0.03
+				fascism_drift = 0.01
+				nationalist_acceptance = 50
+				fascism_drift = 25
+			}
+		}
+
+		USA_demResearch = {
+			picture = generic_research_bonus
+			modifier = {
+				research_speed_factor = 0.05
+				democratic_drift = 0.025
+			}
+		}
+
+		USA_RedWave = { 
+			picture = FIN_socialist_wellfare
+			modifier = {
+				army_armor_attack_factor = 0.1
+				army_armor_defense_factor = 0.1
+				army_armor_speed_factor = 0.05
+				army_attack_factor = 0.1 
+			}
+			targeted_modifier = {
+				tag = USA 
+			}
+		}
+
+		USA_demIndustry = {
+			picture = man_five_year_plan_industry
+			modifier = {
+				consumer_goods_factor = 0.05
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+				production_speed_dockyard_factor = 0.1
+				production_speed_infrastructure_factor = 0.25
+				industrial_capacity_factory = -0.1
+			}
+		}
+
 		USA_democracy = {
 			picture = generic_democratic_drift_bonus
 			modifier = {

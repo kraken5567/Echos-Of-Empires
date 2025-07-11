@@ -1,4 +1,4 @@
-ideas = {
+﻿ideas = {
     country = {
         # air
         Z45_air_1 = {

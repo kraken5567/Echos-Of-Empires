@@ -1,8 +1,4 @@
-version="0"
-tags={
-	"Gameplay"
-}
-name = "Mega Campaign Mod"
+name = "Converted - Megapainpvp2"
 replace_path="common/countries"
 replace_path="common/national_focus"
 replace_path="common/peace_conference/ai_peace"
@@ -13,4 +9,4 @@ replace_path="history/states"
 replace_path="history/units"
 replace_path="map/supplyareas"
 replace_path="map/strategicregions"
-supported_version="1.13.4"
+supported_version="1.12.*"
