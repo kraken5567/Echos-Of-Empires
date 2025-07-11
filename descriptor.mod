@@ -1,4 +1,14 @@
-name = "Converted - Megapainpvp2"
+name="Echos of Empires"
+picture="thumbnail.png"
+version="0.1"
+tags={
+	"Alternative History"
+	"Gameplay"
+	"Historical"
+	"Ideologies"
+	"National Focuses"
+	"Map"
+}
 replace_path="common/countries"
 replace_path="common/national_focus"
 replace_path="common/peace_conference/ai_peace"
@@ -9,4 +19,6 @@ replace_path="history/states"
 replace_path="history/units"
 replace_path="map/supplyareas"
 replace_path="map/strategicregions"
-supported_version="1.12.*"
+
+supported_version="1.16.*"
+remote_file_id="3036754741"
