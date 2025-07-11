@@ -37,5 +37,5 @@ replace_path="history/units"
 
 replace_path="map"
 
-supported_version="1.13.*"
+supported_version="1.16.*"
 remote_file_id="3036754741"
