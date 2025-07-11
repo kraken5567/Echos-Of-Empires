@@ -1,0 +1,148 @@
+POL_historical_m = {
+
+	name = "Preserve Polish-Lithuanian Union"
+	desc = "Hold the Polish-Lithuanian Union together"
+
+	allowed = {
+		OR = {
+			original_tag = POL
+		}
+	}
+
+	enable = {
+		OR = { 
+			AND = {
+				NOT = { 
+					has_government = fascism
+					has_government = nationalist	
+				}
+				is_historical_focus_on = yes 
+			}
+		}
+	}
+
+	ai_national_focuses = {
+		POL_civil_reorginization
+		POL_gov_d
+		POL_gov_m
+		POL_gov_m_strengthen
+		POL_gov_f_ban
+
+		POL_industrial_1
+		POL_industrial_C_1
+		POL_industrial_C_2
+
+		POL_industrial_M_1
+		POL_industrial_M_2
+
+		POL_ModernMil_1
+
+		POL_industrial_N
+		POL_industrial_N_1
+
+		POL_industrial_T_1
+
+		POL_Cav_1
+
+		POL_industrial_C_3
+		POL_industrial_C_4
+
+		POL_Cav_2
+
+		POL_industrial_T_1
+
+		POL_ModernMil_2
+
+		POL_industrial_N_2
+		POL_industrial_N_3
+
+		POL_Cav_3
+
+		POL_naval_1
+		POL_naval_2
+		
+		POL_air_1
+		POL_air_2
+
+		POL_naval_3
+
+		POL_air_3
+
+		POL_invade_Russia
+		POL_ROM_invasion
+		POL_GBF
+	}
+}
+
+POL_unhistorical_d = {
+
+	name = "Preserve Polish-Lithuanian Union"
+	desc = "Hold the Polish-Lithuanian Union together"
+
+	allowed = {
+		OR = {
+			original_tag = POL
+		}
+	}
+
+	enable = {
+		OR = { 
+			AND = {
+				NOT = { 
+					has_government = fascism
+					has_government = nationalist	
+				}
+				is_historical_focus_on = yes 
+			}
+		}
+	}
+
+	ai_national_focuses = {
+		POL_civil_reorginization
+		POL_gov_d
+		POL_gov_d_strengthen
+		POL_gov_f_ban
+
+		POL_industrial_1
+		POL_industrial_C_1
+		POL_industrial_C_2
+
+		POL_industrial_M_1
+		POL_industrial_M_2
+
+		POL_ModernMil_1
+
+		POL_industrial_N
+		POL_industrial_N_1
+
+		POL_industrial_T_1
+
+		POL_Mot_1
+
+		POL_industrial_C_3
+		POL_industrial_C_4
+
+		POL_Mot_2
+
+		POL_industrial_T_1
+
+		POL_industrial_N_2
+		POL_industrial_N_3
+
+		POL_Mot_3
+
+		POL_naval_1
+		POL_naval_2
+		
+		POL_air_1
+		POL_air_2
+
+		POL_naval_3
+
+		POL_air_3
+
+		POL_ModernMil_2
+
+		POL_Mot_4
+	}
+}

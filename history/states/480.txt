@@ -10,16 +10,16 @@ state = {
 	state_category = rural
 
 	history = {
-		owner = DEN
+		owner = NOR
 		victory_points = {
 			9154 1
 		}
 		buildings = {
-			infrastructure = 1
+			infrastructure = 2
 			industrial_complex = 0
 			arms_factory = 0
 		}
-		add_core_of = DEN
+		add_core_of = NOR
 	}
 
 	provinces = {

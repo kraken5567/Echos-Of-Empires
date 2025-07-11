@@ -39,7 +39,7 @@ Z45_gov_m:0 "Re-Establish the Monarchy"
 Z45_gov_m_desc:0 "Bring back the rightful heir to the throne."
 
 Z45_gov_m_strengthen:0 "Empower the Right to Rule"
-Z45_gov_m_strengthen_desc:0 "Legitimize the claim of our new ruler!"
+Z45_gov_m__strengthen_desc:0 "Legitimize the claim of our new ruler!"
 
 Z45_invade_Russia:0 "The Last Cossack Raid"
 Z45_invade_Russia_desc:0 "We shall pillage and conquer our rival such that there is no rival to be had!"

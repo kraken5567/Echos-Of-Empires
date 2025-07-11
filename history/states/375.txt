@@ -16,15 +16,13 @@ state = {
 			878 1
 		}
 		buildings = {
-			infrastructure = 1
+			infrastructure = 2
 			industrial_complex = 0
 			arms_factory = 0
 			9902 = {
 				naval_base = 1
 			}
 		}
-		add_core_of = GRE
-		add_core_of = BUL
 	}
 
 	provinces = {

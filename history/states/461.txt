@@ -15,13 +15,13 @@ state = {
 			4445 1
 		}
 		buildings = {
-			infrastructure = 1
+			infrastructure = 2
 			industrial_complex = 0
 			arms_factory = 0
 		}
 	}
 
 	provinces = {
-		7629 4445 9675
+		4445 7629 9675 
 	}
 }

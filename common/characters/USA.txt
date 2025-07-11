@@ -3,14 +3,12 @@ characters = {
 		name = Theodore_2_Roosevelt
 		portraits = {
 			civilian = {
-				large = "gfx/leaders/USA/TRoos.dds"
+				large = GFX_portrait_europe_generic_5
 			}
 		}
 		country_leader = {
-			ideology = conservatism
-			traits = {
-				weak_democrat
-			}
+			ideology = moderatism
+			traits = {  }
 		}
 	}
 	USA_16777411 = {
@@ -82,8 +80,8 @@ characters = {
 		name = Thomas_Broussard
 		portraits = {
 			army = {
-				large = GFX_Portrait_Europe_Generic_Land_2
-				small = GFX_Portrait_Europe_Generic_Land_2_small
+				large = GFX_Portrait_europe_generic_land_6
+				small = GFX_Portrait_europe_generic_land_6_small
 			}
 			civilian = {
 			}
@@ -208,7 +206,8 @@ characters = {
 		name = Branford_Cailloux
 		portraits = {
 			navy = {
-				large = GFX_Portrait_Europe_Generic_Navy_4
+				large = GFX_portrait_europe_generic_navy_4
+				small = GFX_portrait_europe_generic_navy_4_small
 			}
 		}
 		navy_leader = {
@@ -238,8 +237,8 @@ characters = {
 		name = Clayton_Prieur
 		portraits = {
 			army = {
-				large = GFX_Portrait_Europe_Generic_Land_13
-				small = GFX_Portrait_Europe_Generic_Land_13_small
+				large = GFX_portrait_europe_generic_land_7
+				small = GFX_portrait_europe_generic_land_7_small
 			}
 		}
 		corps_commander = {

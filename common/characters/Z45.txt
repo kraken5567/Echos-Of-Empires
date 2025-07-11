@@ -1,4 +1,16 @@
 characters = {
+	Z45_16778990 = {
+		name = Karol_von_Cilli
+		portraits = {
+			civilian = {
+				large = GFX_portrait_unknown
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
 	Z45_16777610 = {
 		name = Marian_Bem
 		portraits = {
@@ -62,8 +74,8 @@ characters = {
 		name = Edward_Mokronowski
 		portraits = {
 			army = {
-				large = "gfx/leaders/POL/Z45-POLFascism.dds"
-				small = "gfx/leaders/POL/Z45-POLFascism.dds"
+				large = GFX_Portrait_Europe_Generic_land_3
+				small = GFX_Portrait_Europe_Generic_land_3_small
 			}
 		}
 		field_marshal = {

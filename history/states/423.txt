@@ -14,8 +14,9 @@ state = {
 			6845 1
 		}
 		buildings = {
-			infrastructure = 3
-			industrial_complex = 2
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 0
 		}
 		add_core_of = USA
 	}

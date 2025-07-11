@@ -1,9 +1,8 @@
-oob = "ALB_1936"
 capital = 119
+
+oob = "ALB_1936"
 set_research_slots = 3
-set_stability = 0.60
-set_war_support = 0.60
-set_convoys = 10
+set_convoys = 0
 
 recruit_character = ALB_16778948
 recruit_character = ALB_16777836
@@ -22,7 +21,7 @@ if = {
 	limit = { has_dlc = "La Resistance" }
 	create_operative_leader = {
 		name = Marin_Ceku
-		GFX = GFX_portrait_europe_generic_operative_male_34
+		GFX = GFX_portrait_europe_generic_operative_male_24
 		traits = { operative_master_interrogator operative_natural_orator }
 		bypass_recruitment = no
 		available_to_spy_master = yes
@@ -46,10 +45,7 @@ set_politics = {
 }
 
 set_popularities = {
-	neutrality = 6
-	fascism = 83.2
-	democratic = 0.8
-	communism = 10
+	neutrality = 100
 }
 
 add_ideas = {
@@ -57,6 +53,8 @@ add_ideas = {
 	civilian_economy
 	export_focus
 }
+set_stability = 0.60
+set_war_support = 0.60
 
 # Starting tech
 set_technology = {
@@ -108,7 +106,7 @@ if = {
 }
 
 if = {
-	limit = { has_dlc = "Man the Guns" }
+	limit = { not = { has_dlc = "Man the Guns" } }
 	create_equipment_variant = {
 		name = "Early Submarine"
 		type = submarine_1
@@ -176,6 +174,7 @@ if = {
 		mid_1_custom_slot = ship_depth_charge_1
 		rear_1_custom_slot = empty
 	}
+		obsolete = no
 	}
 	create_equipment_variant = {
 		name = "Early Heavy Cruiser"
@@ -193,6 +192,7 @@ if = {
 		mid_2_custom_slot = ship_medium_battery_1
 		rear_1_custom_slot = empty
 	}
+		obsolete = no
 	}
 	create_equipment_variant = {
 		name = "Early Light Cruiser"
@@ -210,6 +210,7 @@ if = {
 		mid_2_custom_slot = ship_light_battery_1
 		rear_1_custom_slot = empty
 	}
+		obsolete = no
 	}
 	create_equipment_variant = {
 		name = "Early Submarine"
@@ -273,6 +274,7 @@ if = {
 		engine_type_slot = engine_1_1x
 		special_type_slot_1 = empty
 	}
+		obsolete = no
 	}
 	create_equipment_variant = {
 		name = "Interwar Carrier Fighter"
@@ -283,6 +285,7 @@ if = {
 		engine_type_slot = engine_1_1x
 		special_type_slot_1 = empty
 	}
+		obsolete = no
 	}
 	create_equipment_variant = {
 		name = "Interwar CAS"
@@ -292,6 +295,7 @@ if = {
 		engine_type_slot = engine_1_1x
 		special_type_slot_1 = lmg_defense_turret
 	}
+		obsolete = no
 	}
 	create_equipment_variant = {
 		name = "Interwar Carrier CAS"
@@ -301,6 +305,7 @@ if = {
 		engine_type_slot = engine_1_1x
 		special_type_slot_1 = lmg_defense_turret
 	}
+		obsolete = no
 	}
 	create_equipment_variant = {
 		name = "Interwar Naval Bomber"
@@ -310,6 +315,7 @@ if = {
 		engine_type_slot = engine_1_1x
 		special_type_slot_1 = lmg_defense_turret
 	}
+		obsolete = no
 	}
 	create_equipment_variant = {
 		name = "Interwar Carrier Naval Bomber"
@@ -319,6 +325,7 @@ if = {
 		engine_type_slot = engine_1_1x
 		special_type_slot_1 = lmg_defense_turret
 	}
+		obsolete = no
 	}
 	create_equipment_variant = {
 		name = "Interwar Tactical Bomber"
@@ -329,6 +336,7 @@ if = {
 		special_type_slot_1 = lmg_defense_turret
 		special_type_slot_2 = lmg_defense_turret
 	}
+		obsolete = no
 	}
 	create_equipment_variant = {
 		name = "Interwar Strategic Bomber"
@@ -339,5 +347,9 @@ if = {
 		special_type_slot_1 = lmg_defense_turret
 		special_type_slot_2 = lmg_defense_turret
 	}
+		obsolete = no
 	}
+}
+if = {
+	limit = { has_dlc = "No Step Back" }
 }

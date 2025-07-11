@@ -14,7 +14,7 @@ state = {
 			6235 1
 		}
 		buildings = {
-			infrastructure = 1
+			infrastructure = 2
 			industrial_complex = 0
 			arms_factory = 0
 			6364 = {
@@ -25,6 +25,6 @@ state = {
 	}
 
 	provinces = {
-		316 394 399 3206 3277 3341 6235 6364
+		316 394 399 3206 3277 3341 6235 6364 
 	}
 }

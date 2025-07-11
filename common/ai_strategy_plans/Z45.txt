@@ -1,0 +1,149 @@
+Z45_historical = {
+
+	name = "Polish-Lithuanian National Union"
+	desc = "Form a facist regime over the Balkan and Russo terrirories"
+
+	allowed = {
+		OR = {
+			original_tag = Z45
+		}
+	}
+
+	enable = {
+		OR = { 
+			AND = {
+				has_government = fascism
+				is_historical_focus_on = yes 
+			}
+		}
+	}
+
+	ai_national_focuses = {
+		Z45_a_new_direction
+
+		Z45_industrial_1
+		Z45_industrial_C_1
+		Z45_industrial_C_2
+
+		Z45_industrial_M_1
+		Z45_industrial_M_2
+
+		Z45_ModernMil_1
+
+		Z45_industrial_N
+		Z45_industrial_N_1
+
+		Z45_Mot_1
+
+		Z45_industrial_T_1
+
+		Z45_industrial_C_3
+		Z45_industrial_C_4
+
+		Z45_Mot_2
+
+		Z45_industrial_T_1
+
+		Z45_the_east
+		Z45_villainize_russia
+
+		Z45_Mot_3
+
+		Z45_industrial_N_2
+		Z45_industrial_N_3
+
+		Z45_the_west
+		Z45_villainize_germany
+
+		Z45_ModernMil_2
+		
+		Z45_Mot_4
+
+		Z45_Gov_Options
+		Z45_villainize_bohemia
+		Z45_ally_hungary
+		Z45_ally_denmark
+
+		Z45_naval_1
+		Z45_naval_2
+		
+		Z45_air_1
+		Z45_air_2
+
+		Z45_naval_3
+
+		Z45_air_3
+	}
+}
+
+Z45_unhistorical_m = {
+
+	name = "Expand the Polish-Lithuanian Union"
+	desc = "Expand the monarchist empire over the Balkan and Russo terrirories"
+
+	allowed = {
+		OR = {
+			original_tag = Z45
+		}
+	}
+
+	enable = {
+		OR = { 
+			AND = {
+				is_historical_focus_on = no 
+			}
+		}
+	}
+
+	ai_national_focuses = {
+		Z45_civil_reorginization
+		Z45_gov_d
+		Z45_gov_m
+		Z45_gov_m_strengthen
+		Z45_gov_f_ban
+
+		Z45_industrial_1
+		Z45_industrial_C_1
+		Z45_industrial_C_2
+
+		Z45_industrial_M_1
+		Z45_industrial_M_2
+
+		Z45_ModernMil_1
+
+		Z45_industrial_N
+		Z45_industrial_N_1
+
+		Z45_industrial_T_1
+
+		Z45_Cav_1
+
+		Z45_industrial_C_3
+		Z45_industrial_C_4
+
+		Z45_Cav_2
+
+		Z45_industrial_T_1
+
+		Z45_ModernMil_1
+
+		Z45_industrial_N_2
+		Z45_industrial_N_3
+
+		Z45_Cav_3
+
+		Z45_naval_1
+		Z45_naval_2
+		
+		Z45_air_1
+		Z45_air_2
+
+		Z45_naval_3
+
+		Z45_air_3
+
+		Z45_invade_Russia
+		Z45_ROM_invasion
+		Z45_GBF
+	}
+}
