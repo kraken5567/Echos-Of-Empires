@@ -37,19 +37,14 @@ focus_tree = {
 		prerequisite = { focus = USA_improveMilitary }
 		completion_reward = {
 			add_ideas = USA_pentagon
-<<<<<<< HEAD
 			USA = {
-				686 = {
+				capital_scope = {
 					add_building_construction = {
 						type = pentagon
-						level = 1
-						province = 3957
 						instant_build = yes
 					}
 				}
 			}
-=======
->>>>>>> e49e96a (upload)
 		}
 	}
 	
@@ -1609,9 +1604,11 @@ focus_tree = {
 				if = {
 					limit = {
 						NOT = {
-							is_ally_with = ROOT
-							is_puppet_of = ROOT
-							is_guaranteed_by = ROOT
+							OR = {
+								is_ally_with = ROOT
+								is_puppet_of = ROOT
+								is_guaranteed_by = ROOT
+							}
 						}
 					}
 				}

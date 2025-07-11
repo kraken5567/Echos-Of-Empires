@@ -1,7 +1,6 @@
 ideas = {
 	country = {
 
-<<<<<<< HEAD
 		USANavy_ImprovedSub = {
 			modifier = {
 				navy_submarine_defence_factor = 0.1
@@ -61,9 +60,7 @@ ideas = {
 				naval_doctrine_cost_factor = -0.15
 			}
 		}
-
-=======
->>>>>>> e49e96a (upload)
+		
 		USA_Airforce = {
 			modifier = {
 				experience_gain_air_factor = 0.05
