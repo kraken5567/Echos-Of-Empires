@@ -1,4 +1,9 @@
 spriteTypes = {
+	### USA Leaders
+	spriteType = {
+		name = "GFX_portrait_theodore_roosevelt"
+		texturefile = "gfx/leaders/USA/TRoos.dds"
+	}
 
 	### North American Natives
 

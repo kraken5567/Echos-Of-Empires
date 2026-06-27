@@ -158,7 +158,7 @@ if = {
 		mid_1_custom_slot = ship_depth_charge_1
 		rear_1_custom_slot = empty
 	}
-		obsolete = no
+		
 	}
 	create_equipment_variant = {
 		name = "Early Heavy Cruiser"
@@ -176,7 +176,7 @@ if = {
 		mid_2_custom_slot = ship_medium_battery_1
 		rear_1_custom_slot = empty
 	}
-		obsolete = no
+		
 	}
 	create_equipment_variant = {
 		name = "Early Light Cruiser"
@@ -194,7 +194,7 @@ if = {
 		mid_2_custom_slot = ship_light_battery_1
 		rear_1_custom_slot = empty
 	}
-		obsolete = no
+		
 	}
 	create_equipment_variant = {
 		name = "Early Submarine"
@@ -258,7 +258,7 @@ if = {
 		engine_type_slot = engine_1_1x
 		special_type_slot_1 = empty
 	}
-		obsolete = no
+		
 	}
 	create_equipment_variant = {
 		name = "Interwar Carrier Fighter"
@@ -269,7 +269,7 @@ if = {
 		engine_type_slot = engine_1_1x
 		special_type_slot_1 = empty
 	}
-		obsolete = no
+		
 	}
 	create_equipment_variant = {
 		name = "Interwar CAS"
@@ -279,7 +279,7 @@ if = {
 		engine_type_slot = engine_1_1x
 		special_type_slot_1 = lmg_defense_turret
 	}
-		obsolete = no
+		
 	}
 	create_equipment_variant = {
 		name = "Interwar Carrier CAS"
@@ -289,7 +289,7 @@ if = {
 		engine_type_slot = engine_1_1x
 		special_type_slot_1 = lmg_defense_turret
 	}
-		obsolete = no
+		
 	}
 	create_equipment_variant = {
 		name = "Interwar Naval Bomber"
@@ -299,7 +299,7 @@ if = {
 		engine_type_slot = engine_1_1x
 		special_type_slot_1 = lmg_defense_turret
 	}
-		obsolete = no
+		
 	}
 	create_equipment_variant = {
 		name = "Interwar Carrier Naval Bomber"
@@ -309,7 +309,7 @@ if = {
 		engine_type_slot = engine_1_1x
 		special_type_slot_1 = lmg_defense_turret
 	}
-		obsolete = no
+		
 	}
 	create_equipment_variant = {
 		name = "Interwar Tactical Bomber"
@@ -320,7 +320,7 @@ if = {
 		special_type_slot_1 = lmg_defense_turret
 		special_type_slot_2 = lmg_defense_turret
 	}
-		obsolete = no
+		
 	}
 	create_equipment_variant = {
 		name = "Interwar Strategic Bomber"
@@ -331,7 +331,7 @@ if = {
 		special_type_slot_1 = lmg_defense_turret
 		special_type_slot_2 = lmg_defense_turret
 	}
-		obsolete = no
+		
 	}
 }
 if = {
